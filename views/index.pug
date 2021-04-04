@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  div.cover-container.d-flex.w-100.h-100.p-3.mx-auto.flex-column
+    header.masthead.mb-auto
+      div.inner
+        h3.masthead-brand Cover
+        nav.nav.nav-masthead.justify-content-center
+          a.nav-link.active(href='#') Home
+          a.nav-link(href='#') Features
+          a.nav-link(href='#') Contact
+    main.inner.cover
+      h1.cover-heading Cover your page
+      p.lead=field_1 
+      p.lead=field_2
+      p.lead
+        a.btn.btn-lg.btn-secondary(href='#') Big Boi Button
+    footer.mastfoot.mt-auto
+      div.inner
+        p Footer Text with 
+          a(href='#') a link
