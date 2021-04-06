@@ -22,6 +22,14 @@ app.set('port', port);
 const server = http.createServer(app);
 
 /**
+ * Create IO Socket IO Server
+ */
+const io = require('socket.io')(server);
+const socketService = require('../services/socketIoService');
+
+socketService(io);
+
+/**
  * Listen on provided port, on all network interfaces.
  */
 
@@ -94,6 +102,9 @@ const startGracefulShutdown = () => {
   console.log('Starting shutdown of express...');
   server.close(function () {
     console.log('Express shut down.');
+  });
+  io.close(function () {
+    console.log('Socket IO shut down');
   });
 };
 
